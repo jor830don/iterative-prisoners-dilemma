@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 
 ''' 
@@ -275,7 +276,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######       
     #
     elif player == 7:
-        if getting_team_name:
+        if getting_team_name: algorithm’s strategy.
             return 'loyal vengeful'
         else:
             # use history, opponent_history, score, opponent_score
@@ -286,6 +287,8 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 return 'b' # betray is they were sucker last time
             else:
                 return 'c' #otherwise collude
+. When partner betrays you get negative points but if you collude and your partner betrays you get negative and when it is opposite you get postivive points and a treat. When partner betrays they get punishment. When you betray and partner betrays you both get punishment but if both collude both get treat.
+
 
 
 
@@ -724,4 +727,3 @@ def play_tournament(num_players):
         print('player ' + str(player) , ': ' , 
                str(int(scores[player])/num_players) , ' points: ',
                team_names[player])
-    
