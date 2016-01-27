@@ -16,7 +16,7 @@ Aggregated results are stored in tournament.txt
 Unpublished work (c)2013 Project Lead The Way
 CSE Project 1.3.5 Collaborating on a Project
 Draft, Do Not Distribute
-Version 8/23/2013 
+Version 1/27/2016 
 '''
 
 import random
@@ -127,9 +127,16 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #This example player always betrays.      
     elif player == 1:
         if getting_team_name:
-            return 'backstabber'
+            return 'loyal vengeful'
         else:
-            return 'b'
+            #use history, opponent history, score, opponent score
+            #to compare your strategy
+            if len(opponent_history)==0: # It's the first round: collude
+                return 'c'
+            elif history[-1]=='c' and opponent_history[-1]=='c':
+                return 'b' #betray is they were sucker last time
+            else: 
+                return 'b' #otherwise collude
 
 
 
