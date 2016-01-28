@@ -17,7 +17,7 @@ Aggregated results are stored in tournament.txt
 Unpublished work (c)2013 Project Lead The Way
 CSE Project 1.3.5 Collaborating on a Project
 Draft, Do Not Distribute
-Version 1/27/2016 
+Version 1/28/2016 
 '''
 
 import random
@@ -279,19 +279,22 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
 
+
     ######
     ######       
     #
     elif player == 7:
-        if getting_team_name: algorithm’s strategy.
-            return 'loyal vengeful'
+        if getting_team_name:
+            return 'Honey Bear'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
             if len(opponent_history)==0: #It's the first round: collude
                 return 'c'
             elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were sucker last time
+                return 'b' # betray is they were severely punished last time
+            elif history[-1]=='b' and opponent_history[-1]=='b':
+                return 'b' # betray is they were punished last time
             else:
                 return 'c' #otherwise collude
 . When partner betrays you get negative points but if you collude and your partner betrays you get negative and when it is opposite you get postivive points and a treat. When partner betrays they get punishment. When you betray and partner betrays you both get punishment but if both collude both get treat.
